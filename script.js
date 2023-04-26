@@ -8,3 +8,19 @@ let eraserBtn = document.querySelector("#eraserBtn");
 let clearBtn = document.querySelector("#clearBtn");
 let sliderValue = document.querySelector(".sliderValue");
 let slider = document.querySelector(".slider");
+
+const percentage = 100;
+
+function createGrid(size) {
+    for (let i = 1; i <= size * size; i++) {
+        let cell = document.createElement("div");
+
+        container.append(cell);
+    };
+}
+
+function preSelectedButton() {
+    colorBtn.focus();
+}
+
+createGrid(containerSize);
