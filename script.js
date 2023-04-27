@@ -34,7 +34,11 @@ function updateSliderValue() {
 
 function preSelectedButton() {
     colorBtn.focus();
-
+    
+    addGlobalEventListener("mousedown", ".cell", e => {
+        colorBtn.focus();
+        e.target.style.background = colorSelector.value;
+    });
 };
 
 function addGlobalEventListener(type, selector, callback) {
