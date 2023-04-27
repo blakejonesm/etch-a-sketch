@@ -1,0 +1,10 @@
+body {
+    background-color:rgb(250, 235, 215);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+}
