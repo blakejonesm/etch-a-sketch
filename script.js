@@ -17,14 +17,31 @@ function createGrid(size) {
         cell.style.height = `calc(${percentage}% / ${size})`;
         cell.style.width = `calc(${percentage}% / ${size})`;
         cell.style.backgroundColor = "white";
-        
 
         container.append(cell);
     };
+}
+
+function updateContainerSize(size) {
+    container.innerHTML = '';
+    createGrid(size);
+}
+
+function updateSliderValue() {
+    sliderValue.innerText = `${slider.value} x ${slider.value}`;
 }
 
 function preSelectedButton() {
     colorBtn.focus();
 }
 
-createGrid(containerSize);
+function addGlobalEventListener(type, selector, callback) {
+    document.addEventListener(type, e => {
+        if(e.taret.matches(selector)) callback(e)
+    })
+}
+
+window.onload = () => {
+    createGrid(containerSize);
+    preSelectedButton()
+}
